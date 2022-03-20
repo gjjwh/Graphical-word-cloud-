@@ -5,14 +5,6 @@ from PIL import Image
 # 实例化一个窗口对象
 
 
-def zhu():
-    global window
-    window = tk.Tk()
-    window.geometry('500x100')
-    window.title('choose')
-    dfdf = tk.Button(window, text="默认词云", command=dff)
-    dfdf.pack()
-
 
 def pt():
     global window
@@ -42,7 +34,7 @@ def insert_point():
         f.write(var)
     with open('word.txt') as fp:
         text = fp.read()
-        mk = np.array(Image.open("地图.jpg"))
+        mk = np.array(Image.open("地图map.jpg"))
         wordcloud = WordCloud(mask=mk, max_font_size=100,background_color="white",font_path = "simhei.ttf").generate(text)
         image_produce = wordcloud.to_image()
         image_produce.show()
